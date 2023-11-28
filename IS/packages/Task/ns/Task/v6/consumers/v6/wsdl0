@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="providers" targetNamespace="http://saisukumar/Task.v6.api:providers" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://saisukumar/Task.v6.api:providers" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://saisukumar/Task.v6.api:providers" xmlns:tns="http://saisukumar/Task.v6.api:providers" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="compareDates" type="tns:compareDates"/>
+          <xsd:element name="compareDatesResponse" type="tns:compareDatesResponse"/>
+          <xsd:element name="convertDateFormat" type="tns:convertDateFormat"/>
+          <xsd:element name="convertDateFormatResponse" type="tns:convertDateFormatResponse"/>
+          <xsd:element name="diffBetweenDates" type="tns:diffBetweenDates"/>
+          <xsd:element name="diffBetweenDatesResponse" type="tns:diffBetweenDatesResponse"/>
+          <xsd:element name="getCurrentDate" type="tns:getCurrentDate"/>
+          <xsd:element name="getCurrentDateResponse" type="tns:getCurrentDateResponse"/>
+          <xsd:element name="utilFormat" type="tns:utilFormat"/>
+          <xsd:element name="utilFormatResponse" type="tns:utilFormatResponse"/>
+          <xsd:element name="workingDates" type="tns:workingDates"/>
+          <xsd:element name="workingDatesResponse" type="tns:workingDatesResponse"/>
+          <xsd:complexType name="compareDates">
+            <xsd:sequence>
+              <xsd:element name="date1" nillable="true" type="xsd:string"/>
+              <xsd:element name="date2" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="compareDatesResponse">
+            <xsd:sequence>
+              <xsd:element name="result1" nillable="true" type="xsd:string"/>
+              <xsd:element name="result2" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="convertDateFormat">
+            <xsd:sequence>
+              <xsd:element name="inString" nillable="true" type="xsd:string"/>
+              <xsd:element name="oldPattern" nillable="true" type="xsd:string"/>
+              <xsd:element name="newPattern" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="convertDateFormatResponse">
+            <xsd:sequence>
+              <xsd:element name="output" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="diffBetweenDates">
+            <xsd:sequence>
+              <xsd:element name="date1" nillable="true" type="xsd:string"/>
+              <xsd:element name="date2" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="diffBetweenDatesResponse">
+            <xsd:sequence>
+              <xsd:element name="dateDifferenceSeconds" nillable="true" type="xsd:string"/>
+              <xsd:element name="dateDifferenceMinutes" nillable="true" type="xsd:string"/>
+              <xsd:element name="dateDifferenceHours" nillable="true" type="xsd:string"/>
+              <xsd:element name="dateDifferenceDays" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="getCurrentDate">
+            <xsd:sequence>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="getCurrentDateResponse">
+            <xsd:sequence>
+              <xsd:element name="dateNow" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="utilFormat">
+            <xsd:sequence>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="utilFormatResponse">
+            <xsd:sequence>
+              <xsd:element name="output" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="workingDates">
+            <xsd:sequence>
+              <xsd:element name="date1" nillable="true" type="xsd:string"/>
+              <xsd:element name="date2" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="workingDatesResponse">
+            <xsd:sequence>
+              <xsd:element name="noOfWorkingDays" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="providers_PortType_utilFormatResponse">
+    <wsdl:part name="parameters" element="tns:utilFormatResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_diffBetweenDates">
+    <wsdl:part name="parameters" element="tns:diffBetweenDates">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_utilFormat">
+    <wsdl:part name="parameters" element="tns:utilFormat">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_compareDates">
+    <wsdl:part name="parameters" element="tns:compareDates">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_workingDates">
+    <wsdl:part name="parameters" element="tns:workingDates">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_diffBetweenDatesResponse">
+    <wsdl:part name="parameters" element="tns:diffBetweenDatesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_convertDateFormat">
+    <wsdl:part name="parameters" element="tns:convertDateFormat">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_getCurrentDate">
+    <wsdl:part name="parameters" element="tns:getCurrentDate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_getCurrentDateResponse">
+    <wsdl:part name="parameters" element="tns:getCurrentDateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_convertDateFormatResponse">
+    <wsdl:part name="parameters" element="tns:convertDateFormatResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_compareDatesResponse">
+    <wsdl:part name="parameters" element="tns:compareDatesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="providers_PortType_workingDatesResponse">
+    <wsdl:part name="parameters" element="tns:workingDatesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="providers_PortType">
+    <wsdl:operation name="compareDates">
+      <wsdl:input message="tns:providers_PortType_compareDates">
+    </wsdl:input>
+      <wsdl:output message="tns:providers_PortType_compareDatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="workingDates">
+      <wsdl:input message="tns:providers_PortType_workingDates">
+    </wsdl:input>
+      <wsdl:output message="tns:providers_PortType_workingDatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="utilFormat">
+      <wsdl:input message="tns:providers_PortType_utilFormat">
+    </wsdl:input>
+      <wsdl:output message="tns:providers_PortType_utilFormatResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertDateFormat">
+      <wsdl:input message="tns:providers_PortType_convertDateFormat">
+    </wsdl:input>
+      <wsdl:output message="tns:providers_PortType_convertDateFormatResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentDate">
+      <wsdl:input message="tns:providers_PortType_getCurrentDate">
+    </wsdl:input>
+      <wsdl:output message="tns:providers_PortType_getCurrentDateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diffBetweenDates">
+      <wsdl:input message="tns:providers_PortType_diffBetweenDates">
+    </wsdl:input>
+      <wsdl:output message="tns:providers_PortType_diffBetweenDatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Task_v6_api_providers_Binder" type="tns:providers_PortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="compareDates">
+      <soap12:operation soapAction="Task_v6_api_providers_Binder_compareDates" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="workingDates">
+      <soap12:operation soapAction="Task_v6_api_providers_Binder_workingDates" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="utilFormat">
+      <soap12:operation soapAction="Task_v6_api_providers_Binder_utilFormat" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertDateFormat">
+      <soap12:operation soapAction="Task_v6_api_providers_Binder_convertDateFormat" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentDate">
+      <soap12:operation soapAction="Task_v6_api_providers_Binder_getCurrentDate" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diffBetweenDates">
+      <soap12:operation soapAction="Task_v6_api_providers_Binder_diffBetweenDates" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Task.v6.providers.providers">
+    <wsdl:port name="Task_v6_api_providers_Port" binding="tns:Task_v6_api_providers_Binder">
+      <soap12:address location="http://saisukumar:5555/ws/Task.v6.providers:providers/Task_v6_api_providers_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

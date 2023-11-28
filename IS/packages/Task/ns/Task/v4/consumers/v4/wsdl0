@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="soapUI" targetNamespace="http://host.docker.internal/Task.v2.api:soapUI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://host.docker.internal/Task.v2.api:soapUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://host.docker.internal/Task.v2.api:soapUI" xmlns:tns="http://host.docker.internal/Task.v2.api:soapUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="evenNumbers" type="tns:evenNumbers"/>
+          <xsd:element name="evenNumbersResponse" type="tns:evenNumbersResponse"/>
+          <xsd:element name="oddNumbers" type="tns:oddNumbers"/>
+          <xsd:element name="oddNumbersResponse" type="tns:oddNumbersResponse"/>
+          <xsd:element name="prime2" type="tns:prime2"/>
+          <xsd:element name="prime2Response" type="tns:prime2Response"/>
+          <xsd:element name="sumOfRowResult" type="tns:sumOfRowResult"/>
+          <xsd:element name="sumOfRowResultResponse" type="tns:sumOfRowResultResponse"/>
+          <xsd:element name="addElementsToList" type="tns:addElementsToList"/>
+          <xsd:element name="addElementsToListResponse" type="tns:addElementsToListResponse"/>
+          <xsd:complexType name="evenNumbers">
+            <xsd:sequence>
+              <xsd:element name="range" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="evenNumbersResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="evenNumbers" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="oddNumbers">
+            <xsd:sequence>
+              <xsd:element name="range" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="oddNumbersResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="oddNumbers" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="prime2">
+            <xsd:sequence>
+              <xsd:element name="range" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="prime2Response">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="primeNumbers" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="sumOfRowResult">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="input" nillable="true" type="tns:input"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="input">
+            <xsd:sequence>
+              <xsd:element name="num1" nillable="true" type="xsd:string"/>
+              <xsd:element name="num2" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="sumOfRowResultResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="result" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="addElementsToList">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="addElementsToListResponse">
+            <xsd:sequence>
+              <xsd:element name="result" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="soapUI_PortType_addElementsToList">
+    <wsdl:part name="parameters" element="tns:addElementsToList">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_evenNumbersResponse">
+    <wsdl:part name="parameters" element="tns:evenNumbersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_addElementsToListResponse">
+    <wsdl:part name="parameters" element="tns:addElementsToListResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_prime2Response">
+    <wsdl:part name="parameters" element="tns:prime2Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_evenNumbers">
+    <wsdl:part name="parameters" element="tns:evenNumbers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_oddNumbersResponse">
+    <wsdl:part name="parameters" element="tns:oddNumbersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_oddNumbers">
+    <wsdl:part name="parameters" element="tns:oddNumbers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_sumOfRowResultResponse">
+    <wsdl:part name="parameters" element="tns:sumOfRowResultResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_sumOfRowResult">
+    <wsdl:part name="parameters" element="tns:sumOfRowResult">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_prime2">
+    <wsdl:part name="parameters" element="tns:prime2">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="soapUI_PortType">
+    <wsdl:operation name="prime2">
+      <wsdl:input message="tns:soapUI_PortType_prime2">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_prime2Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="evenNumbers">
+      <wsdl:input message="tns:soapUI_PortType_evenNumbers">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_evenNumbersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addElementsToList">
+      <wsdl:input message="tns:soapUI_PortType_addElementsToList">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_addElementsToListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oddNumbers">
+      <wsdl:input message="tns:soapUI_PortType_oddNumbers">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_oddNumbersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sumOfRowResult">
+      <wsdl:input message="tns:soapUI_PortType_sumOfRowResult">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_sumOfRowResultResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Task_v2_api_soapUI_Binder" type="tns:soapUI_PortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="prime2">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_prime2" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="evenNumbers">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_evenNumbers" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addElementsToList">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_addElementsToList" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oddNumbers">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_oddNumbers" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sumOfRowResult">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_sumOfRowResult" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Task.v4.providers.soapUI">
+    <wsdl:port name="Task_v2_api_soapUI_Port" binding="tns:Task_v2_api_soapUI_Binder">
+      <soap12:address location="http://saisukumar:5555/ws/Task.v4.providers:soapUI/Task_v2_api_soapUI_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

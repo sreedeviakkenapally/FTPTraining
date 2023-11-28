@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="soapUI" targetNamespace="http://saisukumar/Task.v8.provider:soapUI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://saisukumar/Task.v8.provider:soapUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://saisukumar/Task.v8.provider:soapUI" xmlns:tns="http://saisukumar/Task.v8.provider:soapUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="printPeramid" type="tns:printPeramid"/>
+          <xsd:element name="printPeramidResponse" type="tns:printPeramidResponse"/>
+          <xsd:element name="rightPeramid" type="tns:rightPeramid"/>
+          <xsd:element name="rightPeramidResponse" type="tns:rightPeramidResponse"/>
+          <xsd:complexType name="printPeramid">
+            <xsd:sequence>
+              <xsd:element name="input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="printPeramidResponse">
+            <xsd:sequence>
+              <xsd:element name="outputFormat" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="rightPeramid">
+            <xsd:sequence>
+              <xsd:element name="input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="rightPeramidResponse">
+            <xsd:sequence>
+              <xsd:element name="pattern" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="soapUI_PortType_printPeramidResponse">
+    <wsdl:part name="parameters" element="tns:printPeramidResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_rightPeramidResponse">
+    <wsdl:part name="parameters" element="tns:rightPeramidResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_printPeramid">
+    <wsdl:part name="parameters" element="tns:printPeramid">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_rightPeramid">
+    <wsdl:part name="parameters" element="tns:rightPeramid">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="soapUI_PortType">
+    <wsdl:operation name="rightPeramid">
+      <wsdl:input message="tns:soapUI_PortType_rightPeramid">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_rightPeramidResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printPeramid">
+      <wsdl:input message="tns:soapUI_PortType_printPeramid">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_printPeramidResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Task_v8_provider_soapUI_Binder" type="tns:soapUI_PortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="rightPeramid">
+      <soap12:operation soapAction="Task_v8_provider_soapUI_Binder_rightPeramid" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printPeramid">
+      <soap12:operation soapAction="Task_v8_provider_soapUI_Binder_printPeramid" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Task.v8.provider.soapUI">
+    <wsdl:port name="Task_v8_provider_soapUI_Port" binding="tns:Task_v8_provider_soapUI_Binder">
+      <soap12:address location="http://saisukumar:5555/ws/Task.v8.provider:soapUI/Task_v8_provider_soapUI_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

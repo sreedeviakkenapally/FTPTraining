@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="soapUI" targetNamespace="http://host.docker.internal/Task.v2.api:soapUI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://host.docker.internal/Task.v2.api:soapUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://host.docker.internal/Task.v2.api:soapUI" xmlns:tns="http://host.docker.internal/Task.v2.api:soapUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="concatToFullname" type="tns:concatToFullname"/>
+          <xsd:element name="concatToFullnameResponse" type="tns:concatToFullnameResponse"/>
+          <xsd:element name="indexOfString" type="tns:indexOfString"/>
+          <xsd:element name="indexOfStringResponse" type="tns:indexOfStringResponse"/>
+          <xsd:element name="lengthOfInput" type="tns:lengthOfInput"/>
+          <xsd:element name="lengthOfInputResponse" type="tns:lengthOfInputResponse"/>
+          <xsd:element name="removeEmptySpaces" type="tns:removeEmptySpaces"/>
+          <xsd:element name="removeEmptySpacesResponse" type="tns:removeEmptySpacesResponse"/>
+          <xsd:element name="listToString" type="tns:listToString"/>
+          <xsd:element name="listToStringResponse" type="tns:listToStringResponse"/>
+          <xsd:element name="splitcamaReturnHifen" type="tns:splitcamaReturnHifen"/>
+          <xsd:element name="splitcamaReturnHifenResponse" type="tns:splitcamaReturnHifenResponse"/>
+          <xsd:element name="splitCamaReturnList" type="tns:splitCamaReturnList"/>
+          <xsd:element name="splitCamaReturnListResponse" type="tns:splitCamaReturnListResponse"/>
+          <xsd:complexType name="concatToFullname">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="input" nillable="true" type="tns:input"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="input">
+            <xsd:sequence>
+              <xsd:element name="firstName" nillable="true" type="xsd:string"/>
+              <xsd:element name="lastName" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="concatToFullnameResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="fullNameapitalLetters" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="indexOfString">
+            <xsd:sequence>
+              <xsd:element name="inString" nillable="true" type="xsd:string"/>
+              <xsd:element name="charecter" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="indexOfStringResponse">
+            <xsd:sequence>
+              <xsd:element name="OutString" nillable="true" type="xsd:string"/>
+              <xsd:element name="index" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="lengthOfInput">
+            <xsd:sequence>
+              <xsd:element name="input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="lengthOfInputResponse">
+            <xsd:sequence>
+              <xsd:element name="result" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="removeEmptySpaces">
+            <xsd:sequence>
+              <xsd:element name="input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="removeEmptySpacesResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="result" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="listToString">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="inString" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="listToStringResponse">
+            <xsd:sequence>
+              <xsd:element name="listConvertedString" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="splitcamaReturnHifen">
+            <xsd:sequence>
+              <xsd:element name="input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="splitcamaReturnHifenResponse">
+            <xsd:sequence>
+              <xsd:element name="output" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="splitCamaReturnList">
+            <xsd:sequence>
+              <xsd:element name="inString" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="splitCamaReturnListResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="outList" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="soapUI_PortType_splitCamaReturnListResponse">
+    <wsdl:part name="parameters" element="tns:splitCamaReturnListResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_splitcamaReturnHifenResponse">
+    <wsdl:part name="parameters" element="tns:splitcamaReturnHifenResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_listToString">
+    <wsdl:part name="parameters" element="tns:listToString">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_lengthOfInputResponse">
+    <wsdl:part name="parameters" element="tns:lengthOfInputResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_indexOfString">
+    <wsdl:part name="parameters" element="tns:indexOfString">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_concatToFullname">
+    <wsdl:part name="parameters" element="tns:concatToFullname">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_listToStringResponse">
+    <wsdl:part name="parameters" element="tns:listToStringResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_removeEmptySpaces">
+    <wsdl:part name="parameters" element="tns:removeEmptySpaces">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_splitCamaReturnList">
+    <wsdl:part name="parameters" element="tns:splitCamaReturnList">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_lengthOfInput">
+    <wsdl:part name="parameters" element="tns:lengthOfInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_concatToFullnameResponse">
+    <wsdl:part name="parameters" element="tns:concatToFullnameResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_removeEmptySpacesResponse">
+    <wsdl:part name="parameters" element="tns:removeEmptySpacesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_indexOfStringResponse">
+    <wsdl:part name="parameters" element="tns:indexOfStringResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="soapUI_PortType_splitcamaReturnHifen">
+    <wsdl:part name="parameters" element="tns:splitcamaReturnHifen">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="soapUI_PortType">
+    <wsdl:operation name="concatToFullname">
+      <wsdl:input message="tns:soapUI_PortType_concatToFullname">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_concatToFullnameResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listToString">
+      <wsdl:input message="tns:soapUI_PortType_listToString">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_listToStringResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeEmptySpaces">
+      <wsdl:input message="tns:soapUI_PortType_removeEmptySpaces">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_removeEmptySpacesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lengthOfInput">
+      <wsdl:input message="tns:soapUI_PortType_lengthOfInput">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_lengthOfInputResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="indexOfString">
+      <wsdl:input message="tns:soapUI_PortType_indexOfString">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_indexOfStringResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="splitCamaReturnList">
+      <wsdl:input message="tns:soapUI_PortType_splitCamaReturnList">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_splitCamaReturnListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="splitcamaReturnHifen">
+      <wsdl:input message="tns:soapUI_PortType_splitcamaReturnHifen">
+    </wsdl:input>
+      <wsdl:output message="tns:soapUI_PortType_splitcamaReturnHifenResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Task_v2_api_soapUI_Binder" type="tns:soapUI_PortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="concatToFullname">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_concatToFullname" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listToString">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_listToString" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeEmptySpaces">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_removeEmptySpaces" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lengthOfInput">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_lengthOfInput" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="indexOfString">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_indexOfString" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="splitCamaReturnList">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_splitCamaReturnList" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="splitcamaReturnHifen">
+      <soap12:operation soapAction="Task_v2_api_soapUI_Binder_splitcamaReturnHifen" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Task.v5.api.soapUI">
+    <wsdl:port name="Task_v2_api_soapUI_Port" binding="tns:Task_v2_api_soapUI_Binder">
+      <soap12:address location="http://saisukumar:5555/ws/Task.v5.api:soapUI/Task_v2_api_soapUI_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
